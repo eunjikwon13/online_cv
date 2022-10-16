@@ -1,0 +1,66 @@
+---
+layout: default
+---
+            <select class="form-control i18n-dropdown"   onchange="onLanChange(this.options[this.options.selectedIndex].value)">
+                
+                <option value="1" selected> 英语 English </option>
+                <option value="0"> 中文 Chinese </option>
+            </select>
+            <p></p>
+
+            <div class="zh">
+
+                {% include experience-cht.html %}
+
+                {% include skills.html %}
+
+                {% include csie_training-cht.html %}    
+
+                {% include music_training-cht.html %}    
+                
+                            
+            </div>
+
+            <div class="en">
+
+                {% include experience.html %}
+
+                {% include skills.html %}
+
+                {% include csie_training.html %}    
+
+                {% include music_training.html %}    
+                
+                            
+            </div>
+
+<script type="text/javascript">
+    
+    function onLanChange(index){
+        if(index == 0){
+            $('.en').hide()
+            $('.zh').show()
+            // $en.style.display = "none";
+            $('.name').text("吳宗庭 \n Tsung Wu")
+            
+        }else{
+            $('.zh').hide()
+            $('.en').show()
+            /*$en.forEach(function(element) {
+                element.style.display= "block";
+            }, this);
+
+            $zh.forEach(function(element) {
+                element.style.display= "none";
+            }, this);*/
+
+            // $en.style.display = "block";
+            // $zh.style.display = "none";
+            $('.name').text("Tsung-Ting, Wu")
+
+        }
+    }
+    onLanChange(1);
+</script>
+
+
